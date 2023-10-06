@@ -28,7 +28,8 @@
     },
     "autoload": {
         "psr-4": {
-            "AtLab\\Unisender\\": "src/"
+            "AtLab\\Unisender\\": "src/",
+            "AtLab\\Unisender\\": "tests/"
         }
     },
     "scripts": {

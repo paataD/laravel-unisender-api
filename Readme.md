@@ -1,6 +1,12 @@
 ## Unisender Api для Laravel
 
+### Команды
 
+```bash
+php artisan unisender:synch-command
+```
+
+### Список основных методов
 #### Методы
 getLists — получить списки для рассылок с их кодами;
 createList — создать новый список контактов;

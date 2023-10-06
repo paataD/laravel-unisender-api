@@ -1,0 +1,37 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up(): void
+    {
+        Schema::create('email_templates', function (Blueprint $table) {
+            $table->id();
+            $table->string('email')->comment('email подписчика');
+            $table->boolean('subscribe_flg')->comment('флаг подписки');
+            $table->unsignedInteger('user_id')->nullable()->comment('id пользователя системы');
+            $table->string('unsubscribe_reason')->nullable()->comment('Причина отписки: комментарий пользователя');
+            $table->timestamp('subscribed_at')->nullable()->comment('Дата подписки');
+            $table->timestamp('unsubscribed_at')->nullable()->comment('Дата отписки');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('mailing_lists');
+    }
+};
